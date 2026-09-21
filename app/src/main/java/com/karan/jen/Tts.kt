@@ -4,7 +4,7 @@ import android.speech.tts.TextToSpeech
 import java.util.Locale
 class JenTts(c:Context):TextToSpeech.OnInitListener{
  private val t=TextToSpeech(c,this); private var ok=false
- override fun onInit(s:Int){ok=s==TextToSpeech.SUCCESS;if(ok)t.language=Locale("hi","IN")}
+ override fun onInit(s:Int){ok=s==TextToSpeech.SUCCESS;if(ok)t.language=Locale.US}
  fun say(s:String){if(ok)t.speak(s,TextToSpeech.QUEUE_FLUSH,null,"jen")}
  fun close(){t.shutdown()}
 }
